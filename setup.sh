@@ -17,9 +17,11 @@ yum -y install wget gcc gcc-c++ flex bison make bind bind-libs bind-utils openss
 libcom_err-devel libcurl-devel gd zlib-devel zip unzip libcap-devel cronie bzip2 cyrus-sasl-devel perl-ExtUtils-Embed \
 autoconf automake libtool which patch mailx bzip2-devel lsof glibc-headers kernel-devel expat-devel
 yum -y install psmisc net-tools systemd-devel libdb-devel perl-DBI perl-Perl4-CoreLibs xfsprogs rsyslog logrotate crontabs file kernel-headers
+yum -y install perl-ExtUtils-MakeMaker perl-Digest-SHA perl-Net-DNS perl-NetAddr-IP perl-Archive-Tar perl-IO-Zlib perl-Digest-SHA perl-Mail-SPF \
+perl-IP-Country perl-Razor2 perl-Net-Ident perl-IO-Socket-INET6 perl-IO-Socket-SSL perl-Mail-DKIM perl-DBI perl-Encode-Detect perl-HTML-Parser \
+perl-HTML-Tagset perl-Time-HiRes perl-libwww-perl perl-Sys-Syslog perl-DB_File perl-Razor-Agent pyzor
 yum -y update
 yum -y upgrade
-echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 
 OS=`uname`;
 
@@ -759,6 +761,8 @@ else
 	#NM=`/sbin/ifconfig $ETH_DEV | grep 'Mask:' | cut -d: -f4`;	
 	NM=$(/sbin/ifconfig ${ETH_DEV} | grep -oP "(netmask |Mask:)\K[^\s]+(?=.*)")
 fi
+
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 
 if [ $CMD_LINE -eq 0 ]; then
 
