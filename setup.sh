@@ -762,7 +762,7 @@ else
 	NM=$(/sbin/ifconfig ${ETH_DEV} | grep -oP "(netmask |Mask:)\K[^\s]+(?=.*)")
 fi
 
-echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 
 if [ $CMD_LINE -eq 0 ]; then
 
