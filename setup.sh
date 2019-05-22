@@ -762,8 +762,6 @@ else
 	NM=$(/sbin/ifconfig ${ETH_DEV} | grep -oP "(netmask |Mask:)\K[^\s]+(?=.*)")
 fi
 
-echo "nameserver 8.8.4.4" >> /etc/resolv.conf
-
 if [ $CMD_LINE -eq 0 ]; then
 
 	echo -n "Your external IP: ";
@@ -1818,6 +1816,7 @@ fi
 
 chmod 600 $SETUP
 
+echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 ###############################################################################
 ###############################################################################
 
