@@ -950,7 +950,7 @@ if [ $CMD_LINE -eq 0 ]; then
 fi
 
 ##########
-
+echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 echo "beginning pre-checks, please wait...";
 
 # Things to check for:
@@ -1816,7 +1816,6 @@ fi
 
 chmod 600 $SETUP
 
-echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 ###############################################################################
 ###############################################################################
 
