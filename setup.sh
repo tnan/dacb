@@ -22,6 +22,8 @@ perl-IP-Country perl-Razor2 perl-Net-Ident perl-IO-Socket-INET6 perl-IO-Socket-S
 perl-HTML-Tagset perl-Time-HiRes perl-libwww-perl perl-Sys-Syslog perl-DB_File perl-Razor-Agent pyzor
 yum -y update
 yum -y upgrade
+echo nameserver 8.8.8.8 > /etc/resolv.conf
+chattr +i /etc/resolv.conf
 
 OS=`uname`;
 
